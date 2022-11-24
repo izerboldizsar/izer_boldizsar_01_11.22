@@ -1,8 +1,11 @@
 from data import *
 from os import system
 
+filename='data.csv'
+
 def menu():
     system('cls')
+    print('--------MENÜ--------')
     print('0 - Kilépés')
     print('1 - Zenészek')
     print('2 - Albumok')
