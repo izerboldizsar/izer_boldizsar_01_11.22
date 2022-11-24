@@ -1,4 +1,5 @@
 from functions import*
+from os import system
 
 fajlbetoltes()
 
@@ -8,9 +9,9 @@ while choice!='0':
     if choice=='1':
         printArtists()
     elif choice=='2':
-        pass
+        printAlbums()
     elif choice=='3':
-        pass
+        printRatings()
     elif choice=='4':
         pass
     elif choice=='5':

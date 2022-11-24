@@ -34,3 +34,17 @@ def printArtists():
     for i in range(len(artists)):
         print(f'\t{artists[i]}')
     input()
+
+def printAlbums():
+    system('cls')
+    print('Albumok listája:\n')
+    for i in range(len(albums)):
+        print(f'\t{albums[i]}')
+    input()
+
+def printRatings():
+    system('cls')
+    print('Értékelések listája:\n')
+    for i in range(len(ratings)):
+        print(f'\t{ratings[i]}')
+    input()
