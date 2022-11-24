@@ -18,3 +18,12 @@ def menu():
     print('9 - Értékelés törlése')
     print('A - Mentés fájlba')
     return input('kérem válasszon: ')
+
+def fajlbetoltes():
+    file=open(filename,'r',encoding='utf-8')
+    for row in file:
+        darabolt=row.strip().split(';')
+        artists.append(darabolt[0])
+        albums.append(darabolt[1])
+        ratings.append(float(darabolt[2]))
+    file.close()
