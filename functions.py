@@ -27,3 +27,10 @@ def fajlbetoltes():
         albums.append(darabolt[1])
         ratings.append(float(darabolt[2]))
     file.close()
+
+def printArtists():
+    system('cls')
+    print('Zenészek listája:\n')
+    for i in range(len(artists)):
+        print(f'\t{artists[i]}')
+    input()
