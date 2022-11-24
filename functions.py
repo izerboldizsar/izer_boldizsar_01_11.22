@@ -48,3 +48,10 @@ def printRatings():
     for i in range(len(ratings)):
         print(f'\t{ratings[i]}')
     input()
+
+def newArtist():
+    system('cls')
+    print('--------Új zenészek--------')
+    bekertNev=input('Név: ')
+    artists.append(bekertNev)
+    
