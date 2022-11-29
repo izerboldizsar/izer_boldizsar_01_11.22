@@ -13,11 +13,11 @@ while choice!='0':
     elif choice=='3':
         printRatings()
     elif choice=='4':
-        pass
+        newAlbum()
     elif choice=='5':
-        pass
+        newArtist()
     elif choice=='6':
-        pass
+        NewRating()
     elif choice=='7':
         pass
     elif choice=='8':

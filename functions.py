@@ -54,4 +54,28 @@ def newArtist():
     print('--------Új zenészek--------')
     bekertNev=input('Név: ')
     artists.append(bekertNev)
-    
+    mentesFajlVegere(artists)
+    input('Sikeres felvétel.')
+
+def newAlbum():
+    system('cls')
+    print('--------Új albumok--------')
+    bekertAlbum=input('Album: ')
+    albums.append(bekertAlbum)
+    ratings.append(" ")
+    artists.append(" ")
+    mentesFajlVegere(albums[len(albums)-1],ratings[len(ratings)-1],artists[len(artists)-1])
+    input('Sikeres felvétel.')
+
+def NewRating():
+    system('cls')
+    print('--------Új értékelések--------')
+    bekertRating=input('Értékelés: ')
+    ratings.append(bekertRating)
+    mentesFajlVegere(ratings)
+    input('Sikeres felvétel.')
+
+def mentesFajlVegere(albums,artists,ratings):
+    file=open(filename,'a', encoding='utf-8')
+    file.write(f'\n{albums};{artists};{ratings}')
+    file.close()
