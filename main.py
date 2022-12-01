@@ -15,14 +15,10 @@ while choice!='0':
     elif choice=='4':
         newAlbum()
     elif choice=='5':
-        newArtist()
+        pass
     elif choice=='6':
-        NewRating()
+        pass
     elif choice=='7':
         pass
     elif choice=='8':
-        pass
-    elif choice=='9':
-        pass
-    elif choice=='A':
         pass

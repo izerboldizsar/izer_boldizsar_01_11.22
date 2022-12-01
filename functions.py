@@ -11,12 +11,10 @@ def menu():
     print('2 - Albumok')
     print('3 - Értékelések')
     print('4 - Új album felvétele')
-    print('5 - Új zenész felvétele')
-    print('6 - Új értékelés felvétele')
-    print('7 - Zenész törlése')
-    print('8 - Album törlése')
-    print('9 - Értékelés törlése')
-    print('A - Mentés fájlba')
+    print('5 - Zenész törlése')
+    print('6 - Album törlése')
+    print('7 - Értékelés törlése')
+    print('8 - Mentés fájlba')
     return input('kérem válasszon: ')
 
 def fajlbetoltes():
@@ -32,50 +30,39 @@ def printArtists():
     system('cls')
     print('Zenészek listája:\n')
     for i in range(len(artists)):
-        print(f'\t{artists[i]}')
+        print(f'\t{i+1}. {artists[i]}')
     input()
 
 def printAlbums():
     system('cls')
     print('Albumok listája:\n')
     for i in range(len(albums)):
-        print(f'\t{albums[i]}')
+        print(f'\t{i+1}. {albums[i]}')
     input()
 
 def printRatings():
     system('cls')
     print('Értékelések listája:\n')
     for i in range(len(ratings)):
-        print(f'\t{ratings[i]}')
+        print(f'\t{i+1}. {ratings[i]}')
     input()
-
-def newArtist():
-    system('cls')
-    print('--------Új zenészek--------')
-    bekertNev=input('Név: ')
-    artists.append(bekertNev)
-    mentesFajlVegere(artists)
-    input('Sikeres felvétel.')
 
 def newAlbum():
     system('cls')
     print('--------Új albumok--------')
+    bekertArtist=input('Zenész: ')
     bekertAlbum=input('Album: ')
-    albums.append(bekertAlbum)
-    ratings.append(" ")
-    artists.append(" ")
-    mentesFajlVegere(albums[len(albums)-1],ratings[len(ratings)-1],artists[len(artists)-1])
-    input('Sikeres felvétel.')
-
-def NewRating():
-    system('cls')
-    print('--------Új értékelések--------')
     bekertRating=input('Értékelés: ')
-    ratings.append(bekertRating)
-    mentesFajlVegere(ratings)
+    artists.append(str(len(artists))+'. '+bekertArtist)
+    albums.append(str(len(albums))+'. '+bekertAlbum)
+    ratings.append(str(len(ratings))+'. '+bekertRating)
+    mentesFajlVegere(bekertArtist,bekertAlbum,bekertRating)
     input('Sikeres felvétel.')
 
 def mentesFajlVegere(albums,artists,ratings):
+    print(albums)
     file=open(filename,'a', encoding='utf-8')
-    file.write(f'\n{albums};{artists};{ratings}')
+    #file.write(f'\n{len(albums)+1}. {albums};{artists};{ratings}')
+    file.write(f'\n{artists};{albums};{ratings}')
     file.close()
+    input()
