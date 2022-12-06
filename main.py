@@ -1,24 +1,23 @@
 from functions import*
 from os import system
 
-fajlbetoltes()
+
 
 choice=''
 while choice!='0':
     choice=menu()
     if choice=='1':
+        fajlbetoltes()
         printArtists()
     elif choice=='2':
+        fajlbetoltes()
         printAlbums()
     elif choice=='3':
+        fajlbetoltes()
         printRatings()
     elif choice=='4':
+        fajlbetoltes()
         newAlbum()
     elif choice=='5':
-        pass
-    elif choice=='6':
-        pass
-    elif choice=='7':
-        pass
-    elif choice=='8':
-        pass
+        fajlbetoltes()
+        Torles()

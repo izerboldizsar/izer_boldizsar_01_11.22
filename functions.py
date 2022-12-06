@@ -11,13 +11,13 @@ def menu():
     print('2 - Albumok')
     print('3 - Értékelések')
     print('4 - Új album felvétele')
-    print('5 - Zenész törlése')
-    print('6 - Album törlése')
-    print('7 - Értékelés törlése')
-    print('8 - Mentés fájlba')
+    print('5 - Album törlése')
     return input('kérem válasszon: ')
 
 def fajlbetoltes():
+    albums.clear()
+    artists.clear()
+    ratings.clear()
     file=open(filename,'r',encoding='utf-8')
     for row in file:
         darabolt=row.strip().split(';')
@@ -60,9 +60,27 @@ def newAlbum():
     input('Sikeres felvétel.')
 
 def mentesFajlVegere(albums,artists,ratings):
-    print(albums)
     file=open(filename,'a', encoding='utf-8')
     #file.write(f'\n{len(albums)+1}. {albums};{artists};{ratings}')
     file.write(f'\n{artists};{albums};{ratings}')
     file.close()
     input()
+
+def Torles():
+    system('cls')
+    print('Törlés')
+    printArtists()
+    sSz = int(input('Kérem a törlendő előadó sorszámát: '))
+    artists.pop(sSz-1)
+    albums.pop(sSz-1)
+    ratings.pop(sSz-1)
+    mentesFajlba()
+    input('Sikeres törlés!')
+
+def mentesFajlba():
+    file=open(filename,'w',encoding='utf-8')
+    for i in range(len(albums)):
+        if i>0:
+            file.write('\n')
+        file.write(f'{artists[i]};{albums[i]};{ratings[i]}')
+    file.close()
