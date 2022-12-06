@@ -59,7 +59,7 @@ def newAlbum():
     mentesFajlVegere(bekertArtist,bekertAlbum,bekertRating)
     input('Sikeres felvétel.')
 
-def mentesFajlVegere(albums,artists,ratings):
+def mentesFajlVegere(artists,albums,ratings):
     file=open(filename,'a', encoding='utf-8')
     #file.write(f'\n{len(albums)+1}. {albums};{artists};{ratings}')
     file.write(f'\n{artists};{albums};{ratings}')
@@ -79,8 +79,8 @@ def Torles():
 
 def mentesFajlba():
     file=open(filename,'w',encoding='utf-8')
-    for i in range(len(albums)):
-        if i>0:
+    for i in range(len(artists)):
+        if i>-1:
             file.write('\n')
         file.write(f'{artists[i]};{albums[i]};{ratings[i]}')
     file.close()
